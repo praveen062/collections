@@ -23,15 +23,29 @@ public class ArrayListOperationsServiceImpl implements ArrayListOperationsServic
 	
 	@Override
 	public void insertFirst(String string) {
+<<<<<<< HEAD
 		if(string != null){
 			
 		}
+=======
+		
+>>>>>>> Basic Array List operation 1
 	}
 
 	@Override
 	public void insertAtSpecificLocation(String string, int location) {
+<<<<<<< HEAD
 		// TODO Auto-generated method stub
 		
+=======
+		try{
+			nullCheck(string);
+			items.add(location,string);
+		}catch(NullPointerException e){
+			System.out.println(e.getMessage());
+			insertAtSpecificLocation(validItem(), location);
+		}
+>>>>>>> Basic Array List operation 1
 	}
 
 	
@@ -53,8 +67,16 @@ public class ArrayListOperationsServiceImpl implements ArrayListOperationsServic
 
 	@Override
 	public String getFirst() {
+<<<<<<< HEAD
 		// TODO Auto-generated method stub
 		return null;
+=======
+		if(items == null || items.size() ==0 ){
+			System.out.println("list is empty");
+			return "";
+		}
+		return items.get(0);
+>>>>>>> Basic Array List operation 1
 	}
 
 	@Override
