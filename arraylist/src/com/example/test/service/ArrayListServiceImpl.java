@@ -1,11 +1,15 @@
 package com.example.test.service;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
 import com.example.test.data.Employee;
 import com.example.test.data.Person;
+import com.example.test.service.sort.SortByEmployeeName;
 
 public class ArrayListServiceImpl<T extends Person> implements ArrayListService<T>{
 	
@@ -55,5 +59,17 @@ public class ArrayListServiceImpl<T extends Person> implements ArrayListService<
 	@Override
 	public boolean containsObject(T object) {
 		return bucket.contains(object);
+	}
+
+	@Override
+	public void sortTheList(Class<?> comparator) {
+		if (comparator != null) {
+			switch (comparator.getSimpleName()) {
+			case "SortByEmployeeName": 
+				System.out.println("sort by name");
+				Collections.sort(bucket, new SortByEmployeeName<>());
+				break;
+			}
+		}
 	}
 }

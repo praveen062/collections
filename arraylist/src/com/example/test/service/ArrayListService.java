@@ -1,5 +1,7 @@
 package com.example.test.service;
 
+import java.util.Comparator;
+
 import com.example.test.data.Person;
 
 public interface ArrayListService<T extends Person> {
@@ -10,4 +12,5 @@ public interface ArrayListService<T extends Person> {
 	T getItemAtPosition(int position);
 	boolean containsObject(T object);
 	void printAllItems();
+	void sortTheList(Class<?> comparator);
 }
