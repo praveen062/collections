@@ -9,6 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import com.example.test.data.Employee;
 import com.example.test.service.ArrayListService;
 import com.example.test.service.ArrayListServiceImpl;
+import com.example.test.service.sort.SortByEmployeeName;
 
 public class MainTest {
 	private static ArrayListService<Employee> service;
@@ -51,6 +52,8 @@ public class MainTest {
 			case 5:
 			case 6: service.printAllItems();
 				break;
+			case 8: service.sortTheList(SortByEmployeeName.class);
+				break;
 			case 10: flag = false;
 			break;
 			default: break;
@@ -67,6 +70,7 @@ public class MainTest {
 		System.out.println("5. Print Last Element");
 		System.out.println("6. Print all Elements in list");
 		System.out.println("7. Print Item At particular location");
+		System.out.println("8. Sort By Name");
 		System.out.println("10. Exit");
 	}
 	
